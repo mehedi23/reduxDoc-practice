@@ -1,28 +1,12 @@
 import './App.css';
-import {useSelector , useDispatch} from 'react-redux'
+import ClassCounter from './component/ClassBase/ClassCounter';
+import FunCounter from './component/FunctionalBase/FunCounter';
 
 function App() {
-
-  const dispatching = useDispatch();
-  const state = useSelector(state => state.counter);
-
-  console.log(state)
-
-  const incrementCall = () =>{
-    dispatching({ type: "increment" })
-  }
-
-  const dicrementCall = () => {
-    dispatching({type: "dicrement"})
-  }
-
-
   return (
-    <div className="App">
-       <h1>{state}</h1>
-
-       <button onClick={incrementCall}>+</button>
-       <button onClick={dicrementCall}>-</button>
+    <div className="App"> 
+      <FunCounter/>
+      <ClassCounter/>
     </div>
   );
 }
