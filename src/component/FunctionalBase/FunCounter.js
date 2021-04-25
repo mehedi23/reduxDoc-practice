@@ -1,11 +1,16 @@
+import {useEffect} from 'react'
 import {useSelector , useDispatch} from 'react-redux'
+import NewRedu from './NewRedu'
+import {oneActionFun} from '../../store/action/oneAction'
 
 function App() {
 
   const dispatching = useDispatch();
-  const state = useSelector(state => state.counter);
+  const state = useSelector(state => state.counterReducer.counter);
 
-  console.log(state)
+  useEffect(() => {
+    dispatching(oneActionFun())
+  }, [dispatching])
 
   const incrementCall = () =>{
     dispatching({ type: "increment" })
@@ -21,6 +26,8 @@ function App() {
        <h1>{state}</h1> 
        <button onClick={incrementCall}>+</button>
        <button onClick={dicrementCall}>-</button>
+
+       <NewRedu/>
     </div>
   );
 }
