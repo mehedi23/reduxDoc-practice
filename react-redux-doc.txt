@@ -37,9 +37,16 @@ export const special_Funnel_Video_info_reduce = (state = '' , action) =>{
 
 ### reltion between action and reducer
 
-1. reducer আগে থেকে index.js file এ combine করা  থাকে , যাতে  সব জায়গাতে call করা যায় |
-2. আমরা useDispatch এর ফলে action করতে পারলেও reducer এর মাধ্যমে  payload এ data পাঠাই |
-3. action -এ যে dispatch argument call করা হয়,  এই dispatch এ type আর  payload নামে object থাকে | reducer কিন্তু index.js file -এ আগে থেকেই call করা আছে | action কে একটি নির্দিষ্ট  component -এ call করে dispatch করা হয় | এই dispatch এর ফলে type আর  payload send করে | আমরা payload মাধ্যমে data পেয়ে থাকি | কিন্তু payload এর data আমরা সরাসরি পাই না | payload থেকে data পেতে হলে আমাদের reducer এর type টি প্রয়োজন পরে | কারণ reducer এ চালানো হয় |
+1.  reducer আগে থেকে index.js file এ combine করা  থাকে , যাতে  সব জায়গাতে call করা যায় |
+2.  আমরা useDispatch এর ফলে action করতে পারলেও reducer এর মাধ্যমে  payload এ data পাঠাই |
+3.  action -এ যে dispatch argument call করা হয়,  এই dispatch এ type আর  payload নামে object থাকে | 
+    reducer কিন্তু index.js file -এ আগে থেকেই call করা আছে | 
+    action কে একটি নির্দিষ্ট  component -এ call করে dispatch করা হয় | 
+    এই dispatch এর ফলে type আর  payload send করে | 
+    আমরা payload মাধ্যমে data পেয়ে থাকি | 
+    কিন্তু payload এর data আমরা সরাসরি পাই না | 
+    payload থেকে data পেতে হলে আমাদের reducer এর type টি প্রয়োজন পরে | 
+    কারণ reducer এ চালানো হয় |
 
 
 export const warmColdProspect = (state={}, action) => {
