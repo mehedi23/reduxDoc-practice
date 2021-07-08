@@ -61,9 +61,9 @@ export const warmColdProspect = (state={}, action) => {
 		case 'BBBB_AAAA':
 			return {
                         aaaaInfo: {
-                                        ...state.aaaaInfo,
-                                        has_watched: true
-				                    }
+				...state.aaaaInfo,
+				has_watched: true
+			}
                     } 
                         
 		default:
